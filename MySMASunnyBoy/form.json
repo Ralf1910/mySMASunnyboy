@@ -1,0 +1,91 @@
+{
+  "elements": [
+    {
+      "type": "Select",
+      "name": "device",
+      "caption": "Device",
+      "options": [
+        {
+          "label": "Sunny Tripower Smart Energy",
+          "value": "default"
+        }        
+      ]
+    },
+    {
+      "name": "ip",
+      "type": "ValidationTextBox",
+      "caption": "IP Address"
+    },
+    {
+      "type": "NumberSpinner",
+      "name": "port",
+      "caption": "TCP Port"
+    },
+    {
+      "type": "NumberSpinner",
+      "name": "unit_id",
+      "caption": "Unit ID"
+    },
+    {
+      "type": "Label",
+      "label": "Interval, when all values will updating."
+    },
+    {
+      "type": "IntervalBox",
+      "name": "interval",
+      "caption": "Seconds"
+    },
+    {
+      "type": "Label",
+      "label": "Interval, when current values will updating."
+    },
+    {
+      "type": "IntervalBox",
+      "name": "interval_current",
+      "caption": "Seconds"
+    },
+    {
+      "type": "Label",
+      "label": "___ [ Logging ] ________________________________________________________________________________________"
+    },
+    {
+      "type": "CheckBox",
+      "name": "log",
+      "caption": "enable logging"
+    }
+  ],
+  "status": [
+    {
+      "code": 101,
+      "icon": "inactive",
+      "caption": "Please enter the ip address and the tcp port of your SMA device."
+    },
+    {
+      "code": 102,
+      "icon": "active",
+      "caption": "Connection has been established."
+    },
+    {
+      "code": 201,
+      "icon": "error",
+      "caption": "Error: Please enter the ip address and the tcp port of your SMA device."
+    },
+    {
+      "code": 202,
+      "icon": "error",
+      "caption": "Error: Could not read data from your SMA device."
+    }
+  ],
+  "actions": [
+    {
+      "type": "Button",
+      "label": "Read Device",
+      "onClick": "SMATripower_UpdateDevice($id, true);"
+    },
+    {
+      "type": "Button",
+      "label": "Update Values",
+      "onClick": "SMATripower_UpdateValues($id, true);"
+    }
+  ]
+}
